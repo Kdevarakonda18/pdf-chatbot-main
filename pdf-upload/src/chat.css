@@ -1,0 +1,179 @@
+/* src/chat.css */
+
+/* 1. Define Color Palettes */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #ffffff;
+  --border-color: #e5e7eb;
+  --input-bg: #f9fafb;
+  --input-text: #111827;
+  --button-bg: #e53935;
+  --button-bg-hover: #b71c1c;
+  --msg-user-bg: #d1e7dd;
+  --msg-bot-bg: #f8d7da;
+  --navbar-bg: #f8f9fa;
+  --navbar-text: #343a40;
+}
+
+html.dark-mode {
+  --bg-primary: #121212;
+  --bg-secondary: #1c1c1c;
+  --bg-tertiary: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --border-color: #333333;
+  --input-bg: #575454;
+  --input-text: #ffffff;
+  --button-bg: #e53935;
+  --button-bg-hover: #b71c1c;
+  --msg-user-bg: #22c55e;
+  --msg-bot-bg: #7f1d1d;
+  --navbar-bg: #000000;
+  --navbar-text: #ffffff;
+}
+
+/* 2. Apply Variables to Your Styles */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Chatbot {
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+}
+
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .logo,
+.navbar .profile-symbol {
+  font-size: 1.2rem;
+}
+
+/* Style for the new toggle button */
+.theme-toggle-button {
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.main-content {
+  color: var(--text-primary);
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 61px);
+}
+
+.pdf-viewer {
+  flex: 1;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 10px;
+  padding-top: 0px;
+  overflow-y: auto;
+}
+
+.pdf-title {
+  padding: 0 15px;
+}
+
+.pdf-viewer-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-primary);
+  z-index: 10;
+  padding: 10px;
+  padding-top: 0px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pdf-viewer-header input {
+  width: 40px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.chat-message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.user-message {
+  background-color: var(--msg-user-bg);
+  color: var(--text-primary);
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bot-message {
+  background-color: var(--msg-bot-bg);
+  color: var(--text-primary);
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+.input-container button {
+  background-color: var(--button-bg);
+  color: var(--text-secondary);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.input-container button:hover {
+  background-color: var(--button-bg-hover);
+}
